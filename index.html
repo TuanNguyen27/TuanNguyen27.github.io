@@ -15,13 +15,27 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		 <!-- MathJax options -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
 	</head>
-	<body>
+	<body class = "landing">
 
 		<!-- Header -->
 			<header id="header">
@@ -52,16 +66,112 @@
 							<div class="6u$ 12u$(medium)">
                                 <br>
 								<p>I am a junior at <a href="https://www.swarthmore.edu/" target="_blank">Swarthmore College</a> majoring in Mathematics (with Statistics emphasis) and Computer Science.
-                                My CS interests are automation of data science and machine learning pipeline (autoML), dimensionality reduction, distributed optimization and missing data. I am also passionate about philosophy, photography and classical music.</p>
+                                My CS interests are automation of data science and machine learning pipelines (autoML), dimensionality reduction, distributed optimization and missing data. I am also passionate about philosophy, photography and classical music.</p>
 
                                 <p>This summer, I am doing research under <a href="http://www.swarthmore.edu/NatSci/swang1/" target="_blank">Professor Steve Wang</a> at Swarthmore College and <a href="www.randalolson.com/" target="_blank">Dr. Randal Olson </a> at the University of Pennsylvania. </p>
                                 <p>
-                                    If you want to know what I'm thinking check out my <a href="/blog.html">blog</a>.
+                                    Check out my <a href="/blog.html">blog</a> for musings on research projects and machine learning explorations.
                                 </p>
 							</div>
 						</div>
 					</div>
 				</section>
+		<!-- Projects -->
+				<section id="Projects" class="wrapper style2 special">
+					<div class="container">
+						<header class="major special">
+							<h2>Projects</h2>
+							<p>Brief descriptions and detailed links for the curious</p>
+						</header>
+						<div class="feature-grid">
+                            <div class="feature">
+                                <div class="image rounded">
+                                    <a href="">
+                                        <img src="images/ammonite.jpg" alt="" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <header>
+                                        <h4>Estimating The Duration And Number Of Pulses In The Cambrian Explosion </h4>
+                                        <p>In submission to <a href="http://community.geosociety.org/gsa2016/home" target="_blank"> GSA 2016</a></p>
+                                    </header>
+                                    <p>Modeled true extinction times of fossil specicies using an adaptive Beta distribution and Bayesian heuristics. Used kNN classification to yield probablistic prediction on categorical labels (in terms of number of pulses). </p>
+                                </div>
+                            </div>
+							<div class="feature">
+								<div class="image rounded">
+                                    <a href="https://github.com/TuanNguyen27/scikit-mdr">
+                                        <img src="images/mdr.gif" alt="" />
+                                    </a>
+                                </div>
+								<div class="content">
+									<header>
+										<h4>Multi-factor Dimensionality Reduction</h4>
+										<p> Under active development to support multiclass classification and feature construction on continous features </p>
+									</header>
+									<p>Python implementation of the <a href="https://en.wikipedia.org/wiki/Multifactor_dimensionality_reduction" target="_blank"> MDR </a> feature construction algorithm and integration into <a href="https://github.com/scikit-learn/scikit-learn" target="_blank"> scikit-learn </a> and <a href="https://github.com/rhiever/tpot" target="_blank"> TPOT </a> (an autoML tool to select pipeline using genetic programing).</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded">
+                                    <a href="https://github.com/rhiever/k-fold-cv-benchmark">
+                                    <img src="images/kfold.png" alt="" />
+                                    </a>
+                                </div>
+								<div class="content">
+									<header>
+										<h4>Debunking the myth of 10-fold cross-validation and optimizing the number of folds based on meta features of a given dataset</h4>
+										<p>In submission</p>
+									</header>
+									<p>Through a massive benchmarking test, we have confirmed that 10-fold cross-validation (CV) yields the best bias-variance tradeoff. 3-fold CV, on the other hand, consistently underperforms the average accuracy of each algorithm. Currently exploring basic meta-features for recommendations of the number of folds in CV.</p>
+								</div>
+							</div>
+                            <div class="feature">
+                                <div class="image rounded">
+                                    <a href="">
+                                    <img src="images/eluder.jpg" alt="" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <header>
+                                        <h4>In development</h4>
+                                        <p>In submission</p>
+                                    </header>
+                                    <p>.</p>
+                                </div>
+                            <!-- </div>
+                            <div class="feature">
+                                <div class="image rounded">
+                                    <a href="http://papers.nips.cc/paper/5445-near-optimal-reinforcement-learning-in-factored-mdps">
+                                    <img src="images/factored.jpg" alt="" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <header>
+                                        <h4>Near-optimal Reinforcement Learning in Factored MDPs</h4>
+                                        <p>NIPS Spotlight 2014, INFORMS 2014</p>
+                                    </header>
+                                    <p>If the environment is a structured graph (aka factored MDP), then you can exploit that to learn quickly. You can adapt UCB-style approaches for this, posterior sampling gets it for free. </p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="image rounded">
+                                    <a href="http://papers.nips.cc/paper/5185-more-efficient-reinforcement-learning-via-posterior-sampling">
+                                    <img src="images/dice.jpg" alt="" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <header>
+                                        <h4>(More) Efficient Reinforcement Learning via Posterior Sampling</h4>
+                                        <p>NIPS 2013, RLDM 2013</p>
+                                    </header>
+                                    <p>You don't need to use loose UCB-style algorithms to get regret bounds for reinforcement learning. Posterior sampling is more efficient in terms of computation and data and shares similar gaurantees. </p>
+                                </div> -->
+                            </div>
+						</div>
+					</div>
+				</section>
+
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
